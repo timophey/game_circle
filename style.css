@@ -29,13 +29,13 @@ body{
 .lamp:after{
     position: absolute;top:0;left: 50%;
     display: block;width: 5vmin;height: 5vmin;content: "";
-    background: darkkhaki;
+    background: yellow;
     border-radius: 50%;
     border: .5vmin solid black;
     transform: translateX(-50%);
 }
 .win:after{
-    background: greenyellow;   
+    background: green;   
 }
 .red:after{
     background: darkred;

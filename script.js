@@ -23,10 +23,13 @@ function init(){
             lamps.push(lamp);
     }    
 
-    document.addEventListener('keydown',function(){
-        (started) ? stop() : start();
-    });
+    document.addEventListener('keydown',keyHandler);
+    document.addEventListener('touchstart',keyHandler);
     
+}
+
+function keyHandler(){
+    (started) ? stop() : start();
 }
 
 function start(){
@@ -47,11 +50,11 @@ function stop(){
     if(ballCurrent == ballWin){
         gnd.classList.add("win");
         delay /= 1.5;
-        console.info("delay "+delay+" OK");
+        console.info("delay "+Math.floor(delay)+" OK");
     }else{
         gnd.classList.add("red");
         delay = delayDefault;
-        console.info("delay "+delay+" Fail");
+        console.info("delay "+Math.floor(delay)+" Fail");
     }
     started = false;
 }
