@@ -23,12 +23,18 @@ function init(){
             lamps.push(lamp);
     }    
 
+    var supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+    if(supportsTouch){
+        document.addEventListener('touchstart',keyHandler);
+    }else{
+        document.addEventListener('mouseup',keyHandler);
+    }
     document.addEventListener('keydown',keyHandler);
-    document.addEventListener('touchstart',keyHandler);
     
 }
 
-function keyHandler(){
+function keyHandler(e){
+    console.log(e);
     (started) ? stop() : start();
 }
 
